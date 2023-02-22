@@ -72,16 +72,10 @@ get_header(); ?>
                             <a href="<?php the_field('videoLink'); ?>" alt="<?php the_title(); ?>">
                                 <img src="<?php the_field('thumbnail'); ?>" class="img-fluid" alt="KAMISMAX">
                             </a>
-                            <p><?php the_title(); ?></p>
-                            <!-- <p class="todays-date">本日：
-                                <?php
-                                $datetime1 = new DateTime($post->post_date);
-                                $datetime2 = new DateTime();
-                                $interval = $datetime1->diff($datetime2);
-                                echo $datetime1->format('Y-m-d');
-                                echo $datetime2->format('Y-m-d');;
-                                ?> 
-                            </p> -->
+                            <div class="video-overlay">
+                                <p><?php the_title(); ?></p>
+                            </div>
+                            
                         </div>
 
                     </div>
@@ -89,11 +83,27 @@ get_header(); ?>
             <?php endif;
             wp_reset_postdata(); ?>
         </div>
-        <section class="news">
+        <section class="ticker col-lg-10 offset-lg-1 col-md-10 offset-md-1">
             <?php if ($release_query->have_posts()) : ?>
                 <div>
                     <span>Latest News</span>
-                    <ul class="stylist-of-the-month">
+                    <div class="stylist-of-the-month row">
+                        <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
+
+                        <li><a href="#">
+                        <?php the_field('video_about'); ?>
+                        </a></li>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            <?php endif;
+            wp_reset_postdata(); ?>
+        </section>
+        <section class="news col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+            <?php if ($release_query->have_posts()) : ?>
+                <div>
+                    <h2 class="text-center">今月の注目の美容師たち！</h2>
+                    <div class="stylist-of-the-month row">
                         <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
 
                         <!-- <li><a href="#">
@@ -102,31 +112,41 @@ get_header(); ?>
                             <?php
                             $featured_stylists = get_field('stylist');
                             if ($featured_stylists) : ?>
-                                <!-- <ul style="list-style-type: none; padding:0;"> -->
+                            
                                 <?php foreach ($featured_stylists as $featured_stylist) :
                                     $permalink = get_permalink($featured_stylist->ID);
                                     $title = get_the_title($featured_stylist->ID);
                                     $lastName = get_field('lastName', $featured_stylist->ID);
                                     $firstName = get_field('firstName', $featured_stylist->ID);
                                     $instagram = get_field('instagram_account', $featured_stylist->ID);
-                                    $instagram = get_field('instagram_account', $featured_stylist->ID);
+                                    $stylist_photo = get_field('profileImage', $featured_stylist->ID);
                                 ?>
-                                    <li>
+                                    <div class="col-6 my-4 px-0">
                                         <div class="featured-stylist">
-                                            <h4><span><?php echo esc_html($lastName); ?> <?php echo esc_html($firstName); ?></span></h4>
-                                            <p class="mb-0"><?php the_field('video_about'); ?></p>
-                                            <a href="<?php echo esc_html($instagram); ?>"><i class="lab la-instagram"></i></a>
+                                            <div class="row row-flex mx-0">
+                                                <div class="col-lg-4 px-0 image">
+                                                <img src="<?php echo esc_html($stylist_photo); ?>" alt="<?php echo esc_html($lastName); ?>" class="img-fluid">
+                                                
+                                                </div>
+                                                <div class="col-lg-8 px-0 d-flex justify-contents-center align-items-center info">
+                                                <div class="contents">
+                                                <h4><span><?php echo esc_html($lastName); ?> <?php echo esc_html($firstName); ?></span></h4>
+                                                <p class="mb-0"><?php the_field('video_about'); ?></p>
+                                                </div>
+                                                <a href="<?php echo esc_html($instagram); ?>"><i class="lab la-instagram"></i></a>
+                                                </div>
+                                            </div>  
                                         </div>
-                                    </li>
+                                    </div>
                                 <?php endforeach; ?>
-                                <!-- </ul> -->
+
                             <?php endif; ?>
 
 
 
 
                         <?php endwhile; ?>
-                    </ul>
+                                </div>
 
 
 
@@ -182,26 +202,7 @@ get_header(); ?>
 
 </div>
 
-<div class="featured_stylists_of_the_month">
-    <?php
-    $post_objects = get_field('featured_stylists_of_the_month');
-    if ($post_objects) : ?>
-        <div class="stylists px-2">
-            <ul class="px-0">
-                <?php foreach ($post_objects as $post) : ?>
-                    <?php setup_postdata($post); ?>
-                    <li class="stylist">
-                        <div class="stylist-info">
-                            <?php the_field('lastName'); ?><?php the_field('firstName'); ?>
-                            <a href="<?php the_field('instagram_account') ?>">インスタ</a>
-                        </div>
-                    </li>
-                <?php endforeach; ?>
-                <?php wp_reset_postdata(); ?>
-            </ul>
-        </div><!-- /stylists -->
-    <?php endif; ?>
-</div>
+
 
 
 
