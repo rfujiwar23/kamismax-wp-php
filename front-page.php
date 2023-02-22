@@ -41,6 +41,42 @@ get_header(); ?>
                 <?php get_template_part('components/category', 'stylists'); ?>
             <?php endif; ?>
 
+            <?php if (have_rows('four-types')) : ?>
+                <div class="row">
+                    <?php while (have_rows('four-types')) : the_row();
+
+                        $image = get_field('image');
+                        $link = get_field('shotType');
+
+                    ?>
+                        <?php if(get_sub_field('shotType') === 'bottom-right') : ?>
+                        <div class="col-6">
+                            <img src="<?php echo get_sub_field('image'); ?>" alt="" class="img-fluid">
+                            <?php echo get_sub_field('shotType'); ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if(get_sub_field('shotType') === 'bottom-left') : ?>
+                        <div class="col-6">
+                            <img src="<?php echo get_sub_field('image'); ?>" alt="" class="img-fluid">
+                            <?php echo get_sub_field('shotType'); ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if(get_sub_field('shotType') === 'top-right') : ?>
+                        <div class="col-6">
+                            <img src="<?php echo get_sub_field('image'); ?>" alt="" class="img-fluid">
+                            <?php echo get_sub_field('shotType'); ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if(get_sub_field('shotType') === 'top-left') : ?>
+                        <div class="col-6">
+                            <img src="<?php echo get_sub_field('image'); ?>" alt="" class="img-fluid">
+                            <?php echo get_sub_field('shotType'); ?>
+                        </div>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+
 
 
 
@@ -75,7 +111,7 @@ get_header(); ?>
                             <div class="video-overlay">
                                 <p><?php the_title(); ?></p>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -90,9 +126,9 @@ get_header(); ?>
                     <div class="stylist-of-the-month row">
                         <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
 
-                        <li><a href="#">
-                        <?php the_field('video_about'); ?>
-                        </a></li>
+                            <li><a href="#">
+                                    <?php the_field('video_about'); ?>
+                                </a></li>
                         <?php endwhile; ?>
                     </div>
                 </div>
@@ -106,13 +142,13 @@ get_header(); ?>
                     <div class="stylist-of-the-month row">
                         <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
 
-                        <!-- <li><a href="#">
+                            <!-- <li><a href="#">
                         <?php the_field('video_about'); ?>
                         </a></li> -->
                             <?php
                             $featured_stylists = get_field('stylist');
                             if ($featured_stylists) : ?>
-                            
+
                                 <?php foreach ($featured_stylists as $featured_stylist) :
                                     $permalink = get_permalink($featured_stylist->ID);
                                     $title = get_the_title($featured_stylist->ID);
@@ -124,18 +160,18 @@ get_header(); ?>
                                     <div class="col-6 my-4 px-0">
                                         <div class="featured-stylist">
                                             <div class="row row-flex mx-0">
-                                                <div class="col-lg-4 px-0 image">
-                                                <img src="<?php echo esc_html($stylist_photo); ?>" alt="<?php echo esc_html($lastName); ?>" class="img-fluid">
-                                                
+                                                <div class="col-lg-4 col-md-4 px-0 image">
+                                                    <img src="<?php echo esc_html($stylist_photo); ?>" alt="<?php echo esc_html($lastName); ?>" class="img-fluid">
+
                                                 </div>
-                                                <div class="col-lg-8 px-0 d-flex justify-contents-center align-items-center info">
-                                                <div class="contents">
-                                                <h4><span><?php echo esc_html($lastName); ?> <?php echo esc_html($firstName); ?></span></h4>
-                                                <p class="mb-0"><?php the_field('video_about'); ?></p>
+                                                <div class="col-lg-8 col-md-8 px-0 d-flex justify-contents-center align-items-center info">
+                                                    <div class="contents">
+                                                        <h4><span><?php echo esc_html($lastName); ?> <?php echo esc_html($firstName); ?></span></h4>
+                                                        <p class="mb-0"><?php the_field('video_about'); ?></p>
+                                                    </div>
+                                                    <a href="<?php echo esc_html($instagram); ?>"><i class="lab la-instagram"></i></a>
                                                 </div>
-                                                <a href="<?php echo esc_html($instagram); ?>"><i class="lab la-instagram"></i></a>
-                                                </div>
-                                            </div>  
+                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -146,7 +182,7 @@ get_header(); ?>
 
 
                         <?php endwhile; ?>
-                                </div>
+                    </div>
 
 
 
