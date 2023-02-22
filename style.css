@@ -390,6 +390,22 @@ body {
   font-size: 0.6em;
 }
 
+.news ul.stylist-of-the-month {
+  padding:0;
+  list-style-type: none;
+}
+
+.news ul.stylist-of-the-month li .featured-stylist {
+  background:#ffd0d0;
+  margin:2vh auto;
+  padding:2vh 3vw;
+}
+
+.news ul.stylist-of-the-month li .featured-stylist h4 {
+  color:#544545;
+  text-align: left;
+}
+
 
 
 

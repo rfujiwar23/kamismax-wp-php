@@ -42,9 +42,9 @@ get_header(); ?>
             <?php endif; ?>
 
 
-            
 
-            
+
+
 
 
 
@@ -66,7 +66,7 @@ get_header(); ?>
         <div id="carousel" class="owl-carousel owl-theme">
             <?php if ($release_query->have_posts()) : ?>
                 <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
-                    <div class="video" >
+                    <div class="video">
 
                         <div class="about">
                             <a href="<?php the_field('videoLink'); ?>" alt="<?php the_title(); ?>">
@@ -89,116 +89,118 @@ get_header(); ?>
             <?php endif;
             wp_reset_postdata(); ?>
         </div>
-       <section class="news">
-       <?php if ($release_query->have_posts()) : ?>
+        <section class="news">
+            <?php if ($release_query->have_posts()) : ?>
                 <div>
                     <span>Latest News</span>
-                    <ul class="">
-                <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
-                    
+                    <ul class="stylist-of-the-month">
+                        <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
+
                         <!-- <li><a href="#">
                         <?php the_field('video_about'); ?>
                         </a></li> -->
-                        <?php
-$featured_posts = get_field('stylist');
-if( $featured_posts ): ?>
-    <ul style="list-style-type: none; padding:0;">
-    <?php foreach( $featured_posts as $featured_post ): 
-        $permalink = get_permalink( $featured_post->ID );
-        $title = get_the_title( $featured_post->ID );
-        $lastName = get_field( 'lastName', $featured_post->ID );
-        $firstName = get_field( 'firstName', $featured_post->ID );
-        $instagram = get_field( 'instagram_account', $featured_post->ID );
-        ?>
-        <li>
-            <div class="featured-stylist">
-            <span><?php echo esc_html( $lastName ); ?> <?php echo esc_html( $firstName ); ?></span>
-            <p class="mb-0"><?php the_field('video_about'); ?></p>
-            <a href="<?php echo esc_html( $instagram ); ?>">インスタのアカウントへ</a>
-            </div>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-                        
-                        
-                        
-                    
-                <?php endwhile; ?>
+                            <?php
+                            $featured_stylists = get_field('stylist');
+                            if ($featured_stylists) : ?>
+                                <!-- <ul style="list-style-type: none; padding:0;"> -->
+                                <?php foreach ($featured_stylists as $featured_stylist) :
+                                    $permalink = get_permalink($featured_stylist->ID);
+                                    $title = get_the_title($featured_stylist->ID);
+                                    $lastName = get_field('lastName', $featured_stylist->ID);
+                                    $firstName = get_field('firstName', $featured_stylist->ID);
+                                    $instagram = get_field('instagram_account', $featured_stylist->ID);
+                                    $instagram = get_field('instagram_account', $featured_stylist->ID);
+                                ?>
+                                    <li>
+                                        <div class="featured-stylist">
+                                            <h4><span><?php echo esc_html($lastName); ?> <?php echo esc_html($firstName); ?></span></h4>
+                                            <p class="mb-0"><?php the_field('video_about'); ?></p>
+                                            <a href="<?php echo esc_html($instagram); ?>"><i class="lab la-instagram"></i></a>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                                <!-- </ul> -->
+                            <?php endif; ?>
 
-                
 
-                
 
-                
-                
+
+                        <?php endwhile; ?>
+                    </ul>
+
+
+
+
+
+
+
                 </div>
             <?php endif;
             wp_reset_postdata(); ?>
-       </section>
-       <section>
-       
-       </section>
+        </section>
+        <section>
+
+        </section>
 
 
     </div>
 
 
-    
+
 
 
     <?php
-        $args = array(
-            'post_type' => 'video_list',
-        );
-        $release_query = new WP_Query($args);
-        ?>
+    $args = array(
+        'post_type' => 'video_list',
+    );
+    $release_query = new WP_Query($args);
+    ?>
+    <div class="full-video-list">
+        <h2>動画一覧</h2>
         <div class="full-video-list">
-            <h2>動画一覧</h2>
-            <div class="full-video-list">
             <?php if ($release_query->have_posts()) : ?>
-                <ul class="video" >
-                <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
+                <ul class="video">
+                    <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
                         <li>
-                        <div class="about">
-                            <a href="<?php the_field('videoLink'); ?>" alt="<?php the_title(); ?>">
-                                <img src="<?php the_field('thumbnail'); ?>" class="img-fluid" alt="KAMISMAX">
-                            </a>
-                            <p><?php the_title(); ?></p>
+                            <div class="about">
+                                <a href="<?php the_field('videoLink'); ?>" alt="<?php the_title(); ?>">
+                                    <img src="<?php the_field('thumbnail'); ?>" class="img-fluid" alt="KAMISMAX">
+                                </a>
+                                <p><?php the_title(); ?></p>
                             </div>
                         </li>
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
                 </ul>
             <?php endif;
             wp_reset_postdata(); ?>
-            </div>
         </div>
+    </div>
 
-    
-       
-    
+
+
+
 
 </div>
 
 <div class="featured_stylists_of_the_month">
-<?php
-$post_objects = get_field('featured_stylists_of_the_month');
-if ($post_objects) : ?>
-    <div class="stylists px-2">
-        <ul class="px-0">
-            <?php foreach ($post_objects as $post) : ?>
-                <?php setup_postdata($post); ?>
-                <li class="stylist">
-                    <div class="stylist-info">
-                    <?php the_field('lastName'); ?><?php the_field('firstName'); ?>
-                    <a href="<?php the_field('instagram_account') ?>">インスタ</a>
-                    </div>
-                </li>
-            <?php endforeach; ?>
-            <?php wp_reset_postdata(); ?>
-        </ul>
-    </div><!-- /stylists -->
-<?php endif; ?>
+    <?php
+    $post_objects = get_field('featured_stylists_of_the_month');
+    if ($post_objects) : ?>
+        <div class="stylists px-2">
+            <ul class="px-0">
+                <?php foreach ($post_objects as $post) : ?>
+                    <?php setup_postdata($post); ?>
+                    <li class="stylist">
+                        <div class="stylist-info">
+                            <?php the_field('lastName'); ?><?php the_field('firstName'); ?>
+                            <a href="<?php the_field('instagram_account') ?>">インスタ</a>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+            </ul>
+        </div><!-- /stylists -->
+    <?php endif; ?>
 </div>
 
 
@@ -211,5 +213,3 @@ if ($post_objects) : ?>
 
 
 <?php get_footer(); ?>
-
-
