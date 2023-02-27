@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+	
     <script>
     jQuery(document).ready(function ($) {
       var owl = $("#carousel");
@@ -89,151 +89,82 @@
       });
     });
     </script>
-    <script>
-      (function($) {
-	$.simpleTicker = function(element, options) {
-		var defaults = {
-			speed : 500,
-			delay : 4000,
-			easing : 'swing',
-			effectType : 'fade'
-		}
-		var param = {
-			'ul' : '',
-			'li' : '',
-			'initList' : '',
-			'ulWidth' : '',
-			'liHeight' : '',
-			'tickerHook' : 'tickerHook',
-			'effect' : {}
-		}
+	<script>
+    jQuery(document).ready(function ($) {
+      var owl = $("#carousel2");
+      owl.owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        items: 3,
+        loop: true,
+        center: false,
+        rewind: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        freeDrag: false,
+        margin: 0,
+        stagePadding: 0,
+        merge: false,
+        mergeFit: true,
+        autoWidth: false,
+        startPosition: 0,
+        rtl: false,
+        smartSpeed: 500,
+        fluidSpeed: false,
+        dragEndSpeed: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          480: {
+            items: 1,
+            nav: false
+          },
+          768: {
+            items: 2,
+            loop: true
+          },
+          992: {
+            items: 2,
+            loop: true
+          },
+          1200: {
+            items: 2,
+            loop:true
+          }
+        },
+        responsiveRefreshRate: 1000,
+        responsiveBaseElement: window,
+        fallbackEasing: "swing",
+        info: false,
+        nestedItemSelector: false,
+        itemElement: "div",
+        stageElement: "div",
+        refreshClass: "owl-refresh",
+        loadedClass: "owl-loaded",
+        loadingClass: "owl-loading",
+        rtlClass: "owl-rtl",
+        responsiveClass: "owl-responsive",
+        dragClass: "owl-drag",
+        itemClass: "owl-item",
+        stageClass: "owl-stage",
+        stageOuterClass: "owl-stage-outer",
+        grabClass: "owl-grab",
+        autoHeight: false,
+        lazyLoad: false
+      });
 
-		var plugin = this;
-		plugin.settings = {}
-		var $element = $(element),
-			element = element;
-
-		plugin.init = function() {
-			plugin.settings = $.extend({}, defaults, options);
-			param.ul = element.children('ul');
-			param.li = element.find('li');
-			param.initList = element.find('li:first');
-			param.ulWidth = param.ul.width();
-			param.liHeight = param.li.height();
-
-			element.css({height:(param.liHeight)});
-			param.li.css({top:'0', left:'0', position:'absolute'});
-
-
-			switch (plugin.settings.effectType) {
-				case 'fade':
-					plugin.effect.fade();
-					break;
-				case 'roll':
-					plugin.effect.roll();
-					break;
-				case 'slide':
-					plugin.effect.slide();
-					break;
-			}
-			plugin.effect.exec();
-		}
-
-		plugin.effect = {};
-		plugin.effect.exec = function() {
-			param.initList.css(param.effect.init.css)
-				.animate(param.effect.init.animate,plugin.settings.speed,plugin.settings.easing)
-				.addClass(param.tickerHook);
-			setInterval(function(){
-				element.find('.' + param.tickerHook)
-					.animate(param.effect.start.animate,plugin.settings.speed,plugin.settings.easing)
-					.next()
-					.css(param.effect.next.css)
-					.animate(param.effect.next.animate,plugin.settings.speed,plugin.settings.easing)
-					.addClass(param.tickerHook)
-					.end()
-					.appendTo(param.ul)
-					.css(param.effect.end.css)
-					.removeClass(param.tickerHook);
-			}, plugin.settings.delay);
-		}
-
-		plugin.effect.fade = function() {
-			param.effect = {
-				'init' : {
-					'css' : {display:'block',opacity:'0'},
-					'animate' : {opacity:'1',zIndex:'98'}
-				},
-					'start' : {
-					'animate' : {opacity:'0'}
-				},
-				'next' : {
-					'css' : {display:'block',opacity:'0',zIndex:'99'},
-					'animate' : {opacity:'1'}
-				},
-				'end' : {
-					'css' : {display:'none',zIndex:'98'}
-				}
-			}
-		}
-
-		plugin.effect.roll = function() {
-			param.effect = {
-				'init' : {
-					'css' : {top:'3em',display:'block',opacity:'0'},
-					'animate' : {top:'0',opacity:'1',zIndex:'98'}
-				},
-				'start' : {
-					'animate' : {top:'-3em',opacity:'0'}
-				},
-				'next' : {
-					'css' : {top:'3em',display:'block',opacity:'0',zIndex:'99'},
-					'animate' : {top:'0',opacity:'1'}
-				},
-				'end' : {
-					'css' : {zIndex:'98'}
-				}
-			}
-		}
-
-		plugin.effect.slide = function() {
-			param.effect = {
-				'init' : {
-					'css' : {left:(200),display:'block',opacity:'0'},
-					'animate' : {left:'0',opacity:'1',zIndex:'98'}
-				},
-				'start' : {
-					'animate' : {left:(-(200)),opacity:'0'}
-				},
-				'next' : {
-					'css' : {left:(param.ulWidth),display:'block',opacity:'0',zIndex:'99'},
-					'animate' : {left:'0',opacity:'1'}
-				},
-				'end' : {
-					'css' : {zIndex:'98'}
-				}
-			}
-		}
-
-		plugin.init();
-	}
-
-	$.fn.simpleTicker = function(options) {
-		return this.each(function() {
-			if (undefined == $(this).data('simpleTicker')) {
-				var plugin = new $.simpleTiecker(this, options);
-				$(this).data('simpleTicker', plugin);
-			}
-		});
-	}
-})(jQuery);
-
-$(function(){
-	$.simpleTicker($('#js-ticker-fade'), {'effectType':'fade'});
-	$.simpleTicker($('#js-ticker-roll'), {'effectType':'roll'});
-	$.simpleTicker($('#js-ticker-slide'), {'effectType':'slide'});
-});
+      $(".next").click(function () {
+        owl.trigger("owl.next");
+      });
+      $(".prev").click(function () {
+        owl.trigger("owl.prev");
+      });
+    });
     </script>
+    
 </head>
 
 <body <?php body_class(); ?>>

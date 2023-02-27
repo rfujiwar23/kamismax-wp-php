@@ -7,6 +7,30 @@ Description: KAMISMAX用のテンプレート
 Version: 1.0
 */
 
+
+.ticker {
+  
+  width:100%;
+  max-width:500px;
+  margin:5vh auto;
+  text-align: left;
+  border: #ccc 1px solid;
+  position: relative;
+  overflow: hidden;
+  background-color:#ffffff;
+}
+
+.ticker ul {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.ticker ul li {
+  width: 100%;
+  display: none;
+}
+
 .dropdown-menu {
     font-size: small !important;
 }
@@ -108,7 +132,7 @@ body {
 }
 
 .bg-video-wrap .title .links .link a .link-contents:hover {
-  background:#484536;
+  background:rgba(244,25,166);
   color: #fff;
 }
 
@@ -388,6 +412,14 @@ body {
   opacity: 1;
 }
 
+.video-overlay .contents iframe {
+  width: 100%!important;
+height: 100%!important;
+}
+
+.yes {
+  display:none;
+}
 
 
 .full-video-list {
@@ -445,8 +477,8 @@ body {
   font-size: 1.5em;
   color: #fff;
   position: absolute;
-  bottom:0.5%;
-  right:1%;
+  bottom:3%;
+  right: 3%;
 }
 
 .featured-stylist .info .contents {
@@ -460,6 +492,105 @@ body {
 }
 
 .featured-stylist .info .contents p {
+  font-size: 0.8em;
+}
+
+
+.image-shots:nth-child(1) {
+  background:#ece2b2;
+}
+
+.image-shots:nth-child(2) {
+  background:#6cbd62;
+}
+
+.image-shots:nth-child(3) {
+  background:#22074a;
+}
+
+.image-shots:nth-child(4) {
+  background:#ff8002;
+}
+
+.image-shots:nth-child(1) .type {
+  color:#fff;
+  position:absolute;
+  bottom:0%;
+  right:0%;
+  background: rgb(244, 113, 25);
+  border-bottom:1px solid rgb(0,0,0);
+  border-right: 1px solid rgb(0,0,0);
+  font-size: 0.8em;
+    padding: 10px;
+    border-top-left-radius: 50%;
+}
+
+.image-shots:nth-child(2) .type {
+  color:#fff;
+  position:absolute;
+  bottom: 0%;
+    left: 0%;
+    background: rgb(244, 113, 25);
+    border-bottom:1px solid rgb(0,0,0);
+    font-size: 0.8em;
+    padding: 10px;
+    border-top-right-radius: 50%;
+}
+
+.image-shots:nth-child(3) .type {
+  color:#fff;
+  position:absolute;
+  top:0%;
+  right:0%;
+  background: rgb(244, 113, 25);
+  border-right: 1px solid rgb(0,0,0);
+  font-size: 0.8em;
+    padding: 10px;
+    border-bottom-left-radius: 50%;
+}
+
+.image-shots:nth-child(4) .type {
+  color:#fff;
+  position:absolute;
+  top:0%;
+  left:0%;
+  background: rgb(244, 113, 25);
+  font-size: 0.8em;
+    padding: 10px;
+    border-bottom-right-radius: 50%;
+}
+
+.sample-video {
+  padding:4vh 0;
+  margin:3vh auto;
+}
+
+.sample-video .row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sample-video .row-flex .video-info {
+  background:rgb(229, 229, 299);
+  box-shadow: 1px 3px 6px rgba(20, 20, 20, 0.6);
+  padding:10px;
+  border-radius: 10px;;
+}
+
+.sample-video .row-flex .video-info .video {
+  aspect-ratio: 16/9;
+  position:relative;
+  
+}
+
+.sample-video .row-flex .video-info .video iframe {
+  width:100% !important;
+  height: 100% !important;
+  position: absolute;
+}
+
+.sample-video .row-flex .video-info p {
+  padding:20px 5px 10px;
   font-size: 0.8em;
 }
 
@@ -479,6 +610,8 @@ body {
     right: 1%;
 }
 }
+
+
 
 
 
