@@ -594,6 +594,69 @@ height: 100%!important;
   font-size: 0.8em;
 }
 
+.seminarType {
+  width:100%;
+  max-width: 992px;
+  margin:0 auto;
+  /* background:#ece2b2; */
+}
+
+.seminarType ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding:0;
+}
+
+.seminarType ul li {
+  flex: 1 0 21%;
+}
+
+.seminarType ul li .seminarInfo {
+  width:96%;
+  margin:0 auto 20px;
+  text-align: center;
+  border:1px solid #22074a;
+}
+
+.seminarType ul li .seminarInfo h3{
+  font-size: 0.8em;
+  background:#22074a;
+  padding:5px;
+  color:#fff;
+}
+
+.seminarType ul li .seminarInfo p {
+  color:#000;
+  padding:0;
+}
+
+.viewer_environment {
+  width: 96%;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.viewer_environment .information {
+  border: 2px solid #935103;
+  padding: 20px 10px;
+  margin: 4vh auto;
+  box-shadow: 8px 9px 2px rgb(20 10 10 / 22%);
+}
+
+.viewer_environment .information .text-area h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  background:#0d031d;
+  color: #fff;
+  padding:5px 10px;
+}
+
+.viewer_environment .information .text-area p {
+  font-size: 0.9em;
+  line-height: 2em;
+  padding: 5px 10px;
+}
+
 
 
 
