@@ -21,9 +21,10 @@
                                 <div class="contents">
                                     
                                     <p><?php the_title(); ?></p>
-                                    <a href="<?php the_field('videoLink'); ?>">
+                                    <a href="<?php echo get_permalink(); ?>">
                                         動画を視聴する
                                     </a>
+                                   
                                 </div>
                             </div>
                             

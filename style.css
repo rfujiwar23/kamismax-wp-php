@@ -640,6 +640,12 @@ video {
 .seminar-information-area {
   margin:8vh auto;
   background:#bfb1b1;
+  padding:2vh 2vw;
+}
+
+.seminar-information-area p {
+  line-height: 2em;
+  margin-top: 3vh;
 }
 
 .viewer_environment {
@@ -735,11 +741,98 @@ video {
   height: 100% !important;
 }
 
+
+.videoInfo .information-block .register {
+  margin:3vh auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoInfo .information-block .register .btn-kamismax {
+  background: rgb(43, 42, 46);
+  color:#fff;
+}
+
 .nav-links {
   margin-top:4vh;
   display: flex;
   justify-content: space-between;
   margin-bottom: 2vh;
+}
+
+.video-title {
+  padding-top:33%;
+  background:#eeb1b1;
+  
+  position: relative;
+}
+
+.video-title h2 {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.25em;
+  width:100%;
+  text-decoration: underline;
+}
+
+.video-title h2 span {
+  background: rgba(255, 255, 255, 0.9);
+  padding:10px 20px;
+}
+
+
+.stylist-page {
+  background:#5d5d5d;
+  aspect-ratio: 4/1;
+}
+.stylist-page .stylist-title {
+  color: #fff;
+}
+
+.stylist-contents {
+  background: rgb(217, 217, 237);
+}
+
+.stylist-contents .stylist {
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);;
+}
+
+.stylist-contents .stylist .stylist-information {
+  /* background:rgb(173, 255, 162); */
+  margin:0 10px;
+  padding:10px;
+}
+
+.stylist-contents .stylist .stylist-information h4 {
+  font-size: 1.5em;
+}
+
+.stylist-contents .stylist .stylist-information h5 {
+  font-size: 1em;
+  font-style: italic;
+}
+
+.stylist-contents .stylist .stylist-information p {
+  line-height: 1.5em;
+}
+
+.stylist-contents .stylist .stylist-information p strong {
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.stylist-contents .stylist .stylist-information p span {
+  font-size: 0.9em;
+}
+
+@media screen and (max-width:992px) {
+  .stylist-page {
+    background:#5d5d5d;
+    aspect-ratio: 3/1;
+  }
 }
 
 
@@ -778,6 +871,15 @@ video {
     max-width: 480px;
     /* max-width: 420px; */
   }
+
+  .video-title {
+    padding-top:70%;
+  }
+
+  .video-title h2 {
+    width: 100%; 
+  }
+  
 }
 
 @media screen and (max-width:576px) {
@@ -786,12 +888,23 @@ video {
     max-width: 456px;
     /* max-width: 420px; */
   }
+
+  .video-title {
+    padding-top:60%;
+  }
+
+  
 }
 
 
 
 
 @media screen and (max-width:500px) {
+
+  .video-title {
+    padding-top:70%;
+  }
+
   .new-release-videos-list .video {
     width: 100%;
     /* max-width: 200px; */

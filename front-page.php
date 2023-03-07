@@ -60,6 +60,8 @@ get_header(); ?>
     <?php endif; ?>
 
 
+
+
     <?php get_template_part('template-parts/new-video-list'); ?>
 
     <?php get_template_part('template-parts/tickers'); ?>
@@ -67,6 +69,43 @@ get_header(); ?>
     <?php get_template_part('template-parts/featured-stylist'); ?>
 
     <?php get_template_part('template-parts/full-video-list'); ?>
+
+    <div class="container">
+    <div class="read-more text-center my-4">
+    <?php
+        //get the posts
+        $args = array(
+            // post per page
+            'posts_per_page' => 3,
+            // order by ID
+            'orderby' => 'ID',
+            // descending order
+            'order' => 'DESC',
+        );
+        $the_query = new WP_Query($args);
+        if ($the_query->have_posts()) :
+            while ($the_query->have_posts()) :
+                $the_query->the_post();
+        ?>
+                <div class="news">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                    <h4 class="time">投稿：<?php the_time('Y.m.d') ?></h4>
+                    <!-- <p class="category"><span><?php the_category(' '); ?></span></p> -->
+                    <p><?php echo mb_substr(get_the_excerpt(), 0, 50) . '...'; ?>
+                        <a href="<?php the_permalink(); ?>">もっと読む</a>
+                    </p>
+                </div>
+            <?php endwhile;
+        else : ?>
+            <p class="text-center">投稿数：0件</p>
+        <?php endif;
+        wp_reset_postdata(); ?>         
+            
+        <a class="btn btn-read-more" href="<?php bloginfo('url') ?>/news">記事一覧</a>
+    </div>
+    </div>
 
 
 
