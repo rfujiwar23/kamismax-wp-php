@@ -67,6 +67,7 @@ get_header(); ?>
     <?php get_template_part('template-parts/tickers'); ?>
 
     <?php get_template_part('template-parts/featured-stylist'); ?>
+    <?php get_template_part('template-parts/featured-seminar'); ?>
 
     <?php get_template_part('template-parts/full-video-list'); ?>
 

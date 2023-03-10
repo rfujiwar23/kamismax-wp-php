@@ -21,7 +21,12 @@ get_header(); ?>
                     $related_post = get_field('stylist'); ?>
                 
                     <div class="information-block">
+                    <?php 
+    $terms = get_the_terms( $post->ID, 'genre' ); 
+
+?>
                         <p>スタイリスト：<?php echo $related_post[0]->post_title ?></p>
+                        
 
                         <p><span>動画について</span><br>
                             <?php echo the_field('newVideoDescription') ?></p>

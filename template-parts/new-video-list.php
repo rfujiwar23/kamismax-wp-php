@@ -1,4 +1,4 @@
-<div class="new-video-list">
+<div class="new-video-list" style="background:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.8)), url(<?php echo get_template_directory_uri(); ?>/img/temp-pic.png);">
         <h2>新着動画</h2>
         <h4>最新8件</h4>
         <?php
