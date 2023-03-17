@@ -3,13 +3,27 @@
 // Theme Files
 function theme_files()
 {
- wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css');
- wp_enqueue_style('main-style', get_template_directory_uri() . '/style2.css');
+ wp_enqueue_style('main-style', get_template_directory_uri() . '/css/style.css');
+ 
+//  wp_enqueue_style('main-style', get_template_directory_uri() . '/style2.css');
  wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
  wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array('jquery'), true, true );
+//  wp_enqueue_script('main-curriculum', get_template_directory_uri() . 'js/curriculum.js', array( 'jquery' ), '1.0.0', true );
 }
 
 add_action('wp_enqueue_scripts', 'theme_files');
+
+function add_isotope() {
+  wp_register_script( 'isotope', get_template_directory_uri().'/js/libs/jquery.isotope.min.js', array('jquery'),  true );
+  wp_register_script( 'isotope-init', get_template_directory_uri().'/js/isotope.js', array('jquery', 'isotope'),  true );
+  wp_register_style( 'isotope-css', get_stylesheet_directory_uri() . '/css/isotope.css' );
+
+  wp_enqueue_script('isotope-init');
+  wp_enqueue_style('isotope-css');
+}
+
+add_action( 'wp_enqueue_scripts', 'add_isotope' );
+
 
 // Title Tag Support
 add_theme_support( 'title-tag' );

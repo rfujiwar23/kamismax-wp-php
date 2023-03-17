@@ -6,6 +6,17 @@
 
 get_header(); ?>
 
+<?php get_template_part('template-parts/new-video-list'); ?>
+
+
+
+<?php get_template_part('template-parts/tickers'); ?>
+
+<?php get_template_part('template-parts/featured-stylist'); ?>
+    
+
+    
+
 
 
 <?php if (have_rows('top-image-video')) : ?>
@@ -55,6 +66,33 @@ get_header(); ?>
                 <?php get_template_part('components/category', 'viewEnvinformation'); ?>
             <?php endif; ?>
 
+            <?php if (get_row_layout() == 'kamismax_features') : ?>
+                
+                <div class="kamismax_features container-fluid">
+                
+                <h2><?php the_sub_field('section_title') ?></h2>
+                <?php if( have_rows('features_contents') ): $i = 0; ?>
+                    <div class="main-points p-2">
+                    <?php while( have_rows('features_contents') ): the_row(); $i++;
+                        
+                        ?>
+                        
+                        <div class="point card">
+                            <h3 class="text-center"><span>ポイント <?php echo $i; ?></span></h3>
+                            <h4><?php the_sub_field('feature_header'); ?></h4>
+                            <div class="card-body">
+                            <?php the_sub_field('feature_description'); ?>
+                            </div>
+                            <div class="card-image p-2">
+                            <img src="<?php the_sub_field('feature_image'); ?>" alt="KAMISMAX　カミスマックス" class="img-fluid">
+                            </div>  
+                        </div>
+                    <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
         <?php endwhile; ?>
 
     <?php endif; ?>
@@ -62,14 +100,7 @@ get_header(); ?>
 
 
 
-    <?php get_template_part('template-parts/new-video-list'); ?>
-
-    <?php get_template_part('template-parts/tickers'); ?>
-
-    <?php get_template_part('template-parts/featured-stylist'); ?>
-    <?php get_template_part('template-parts/featured-seminar'); ?>
-
-    <?php get_template_part('template-parts/full-video-list'); ?>
+    
 
     <div class="container">
     <div class="read-more text-center my-4">
@@ -119,6 +150,8 @@ get_header(); ?>
 
 
 </div>
+
+<?php get_template_part('template-parts/full-video-list'); ?>
 
 
 
