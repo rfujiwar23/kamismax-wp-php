@@ -9,18 +9,24 @@
                             ?>
                                 <div class="information">
                                     
-                                        <div class="col-sm-2 col-2 icon-image mx-auto mb-3">
+                                    <div class="row mb-3">
+                                    <div class="col-sm-2 col-3 icon-image mx-auto mb-3">
                                             <img src="<?php the_sub_field('icon'); ?>" alt="<?php the_sub_field('header'); ?> 画像" class="img-fluid">
                                         </div>
-                                        <div class="text-area">
+                                        <div class="col-sm-10 col-9 text-area my-0">
                                             <h3><?php the_sub_field('header'); ?></h3>
-                                            <p><?php the_sub_field('about'); ?></p>
+                                            <p style="margin:0;"><?php the_sub_field('about'); ?></p>
                                         </div>
+                                    </div>
                                     
                                     <div class="sample-image">
                                         <img src="<?php the_sub_field('sample_image'); ?>" alt="KAMISMAX">
                                     </div>
+                                    <div class="image-caption">
+                                        <p class="mb-0"><?php the_sub_field('caption'); ?></p>
+                                    </div>
                                 </div>
+                                
                             <?php endwhile; ?>
                         </div>
                     <?php endif; ?>

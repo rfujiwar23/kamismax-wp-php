@@ -15,7 +15,7 @@
                         <li>
                             
                             <div class="about">
-                                <a href="<?php the_field('videoLink'); ?>" alt="<?php the_title(); ?>">
+                                <a href="<?php echo get_permalink(); ?>" alt="<?php the_title(); ?>">
                                     <img src="<?php the_field('thumbnail'); ?>" class="img-fluid" alt="KAMISMAX">
                                 </a>
                                 <p><?php the_title(); ?></p>

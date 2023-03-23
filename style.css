@@ -4,32 +4,85 @@ Theme URI: https://kamismax.kamisma.com/service1
 Author: Ryo Fujiwara
 Author URI: https://ryo-fujiwara.netlify.app/
 Description: KAMISMAX用のテンプレート
+License: IFING株式会社
 Version: 1.0
 */
 
+footer {
+  padding:2vh;
+  background:#0d031d;
+  color:#fff;
+}
 
-/* .ticker {
+.rolling-ticker {
+  padding:3vh 0;
+}
 
-  width: 100%;
-  max-width: 500px;
-  margin: 5vh auto;
-  text-align: left;
-  border: #ccc 1px solid;
-  position: relative;
+.rolling-ticker h2 {
+  text-align: center;
+}
+
+.register-login {
+  position: fixed;
+  bottom:1%;
+  right: 2%;
+  z-index: 999;
+}
+
+.register-login ul {
+  padding:0;
+}
+
+.register-login ul li {
+  display: inline-block;
+  margin:0 1vw;
+  
+  border-radius: 5px;
+}
+
+
+
+.register-login ul li.register a {
+  color:#fff;
+  text-decoration: none;
+  font-weight: bold;
+  background:#6cbd62;
+  padding:10px 20px;
+  border-radius: 3px;
+  border:1px solid #6cbd62;
+}
+
+
+
+.register-login ul li.login a {
+  color: #6cbd62;
+  background:#fff;
+  text-decoration: none;
+  font-weight: bold;
+  border:1px solid #6cbd62;
+  padding:10px 20px;
+  border-radius: 3px;
   overflow: hidden;
-  background-color: #ffffff;
 }
 
-.ticker ul {
-  width: 100%;
-  position: relative;
-  margin: auto;
+.register-login ul li.register a:hover {
+  color: #346b2d;
+  background:#fff;
+  font-weight: bold;
+  border:1px solid #346b2d;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
-.ticker ul li {
-  width: 100%;
-  display: none;
-} */
+.register-login ul li.login a:hover {
+  color:#fff;
+  background:#346b2d;
+  font-weight: bold;
+  border:1px solid #346b2d;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+
 
 .dropdown-menu {
   font-size: small !important;
@@ -50,6 +103,10 @@ body {
 
 .navbar {
   box-shadow: 0 18.7622px 28.1433px rgb(34 60 80 / 16%);
+}
+
+.bg-sub-banner {
+  aspect-ratio: 16/9; 
 }
 
 .bg-video-wrap {
@@ -483,6 +540,10 @@ video {
   flex-wrap: wrap;
 }
 
+.news {
+  padding:2vh 0;
+}
+
 .featured-stylist {
   height: 100%;
   width: 92%;
@@ -674,17 +735,18 @@ video {
   max-width: 1024px;
 }
 
-.viewer_environment .view-row {
+/* .viewer_environment .view-row {
   display: flex;
   justify-content: space-evenly;
-}
+} */
 
 .viewer_environment .view-row .information {
   border: 2px solid #935103;
   padding: 20px 10px;
   margin: 4vh auto;
   box-shadow: 8px 9px 2px rgb(20 10 10 / 22%);
-  width: 30%;
+  width: 100%;
+  max-width: 640px;
   display: flex;
 	flex-direction: column;
 	flex: 1 2 1 100px;
@@ -707,13 +769,18 @@ video {
 .viewer_environment .information .sample-image {
   aspect-ratio: 16/9;
   object-fit: cover;
-  width:75%;
+  /* width:75%; */
   margin:0 auto;
 }
 
 .viewer_environment .information .sample-image img {
   height: 100%;
   width: 100%;
+}
+
+.viewer_environment .information .image-caption {
+  padding:0 10px;
+  font-size: 0.9em;
 }
 
 .level_type .level {
@@ -728,8 +795,16 @@ video {
   font-size: 2em;
 }
 
+.free-text {
+  padding:4vh 20px;
+}
+
 .text-area {
   margin:5vh auto;
+}
+
+.free-text h2 span {
+  padding:10px 20px;
 }
 
 .videoInfo {
@@ -1268,6 +1343,66 @@ video {
   font-size: 0.9em;
 }
 
+.read-more {
+  padding: 8vh 10px 5vh;
+
+}
+
+.read-more h2 {
+  color:rgb(244, 113, 25);
+  text-decoration:underline;
+  text-decoration-style: double;
+  margin-bottom:3vh;
+}
+
+.read-more .news {
+  border-bottom:1px dashed rgb(131,131,131);
+  padding:20px 25px;
+}
+
+.read-more .news:nth-child(odd) {
+  background:rgb(233, 233, 233);
+}
+
+.read-more .news a {
+  font-size: 1.2em;
+  /* text-decoration: none; */
+  color:rgb(12, 12, 12);
+}
+
+.read-more .news h4 {
+  font-size: 0.9em;
+  color:rgb(93, 93, 93);
+}
+
+.read-more .news p {
+  font-size:0.8em;
+}
+
+.read-more .news p a {
+  font-size: 0.9em;
+  color:rgb(1, 100, 213);
+}
+
+.read-more .more-articles {
+  margin-top:3vh;
+  text-align: center;
+}
+
+.read-more .more-articles a {
+  text-decoration: none;
+  color:#28F;
+  padding:10px 20px;
+  border:1px solid #28F;
+}
+
+.read-more .more-articles a:hover {
+  color:#fff;
+  background:#28F;
+  border-radius: 5px;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
 @media screen and (max-width:992px) {
   .stylist-page {
     background:#5d5d5d;
@@ -1289,13 +1424,18 @@ video {
 
   .main-points {
     display: flex;
-    flex-direction: column;
-    width:96%;
+    flex-direction: row;
+    width:100%;
     margin:3vh auto;
+    max-width: 1260px;
+    overflow-x:scroll;
   }
 
   .main-points .point {
     margin:20px auto;
+    width:100%;
+    max-width:420px;
+    min-width:350px;
   }
 }
 
@@ -1304,7 +1444,12 @@ video {
 
 @media screen and (max-width:768px) {
 
-
+  .register-login {
+    /* position: fixed; */
+    bottom:5%;
+    right: 2%;
+    /* z-index: 999; */
+  }
 
   .container {
     width:100% !important;
@@ -1315,7 +1460,7 @@ video {
     font-size: 1.5em;
     color: #fff;
     position: absolute;
-    top: -4.5%;
+    /* top: -4.5%; */
     right: 1%;
   }
 
@@ -1346,6 +1491,10 @@ video {
     padding-top:60%;
   }
 
+  .bg-sub-banner {
+    aspect-ratio: 1.25; 
+  }
+
   
 }
 
@@ -1353,6 +1502,11 @@ video {
 
 
 @media screen and (max-width:500px) {
+
+  .seminarType ul li {
+    flex: 1 0 50%;
+}
+
 
   .video-title {
     padding-top:70%;

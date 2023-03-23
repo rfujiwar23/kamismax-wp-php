@@ -5,7 +5,7 @@
             <?php while (have_rows('level_type')) : the_row();
                 $image = get_sub_field('levelType');
             ?>
-                <div class="row level_type">
+                <div class="row level_type p-2">
                     <div class="level col-md-4 d-flex justify-content-center align-items-center" style="background:<?php the_sub_field('choose_color'); ?>; color: #fff; ">
                         <p class="mb-0"><?php the_sub_field('levelType'); ?></p>
                     </div>

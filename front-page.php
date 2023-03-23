@@ -6,6 +6,10 @@
 
 get_header(); ?>
 
+
+
+<?php get_template_part('template-parts/register-login'); ?>
+
 <?php get_template_part('template-parts/new-video-list'); ?>
 
 
@@ -72,7 +76,7 @@ get_header(); ?>
                 
                 <h2><?php the_sub_field('section_title') ?></h2>
                 <?php if( have_rows('features_contents') ): $i = 0; ?>
-                    <div class="main-points p-2">
+                    <div class="main-points">
                     <?php while( have_rows('features_contents') ): the_row(); $i++;
                         
                         ?>
@@ -103,7 +107,8 @@ get_header(); ?>
     
 
     <div class="container">
-    <div class="read-more text-center my-4">
+    <div class="read-more my-4">
+        <h2 class="text-center">KAMISMAXからのお知らせ</h2>
     <?php
         //get the posts
         $args = array(
@@ -123,9 +128,9 @@ get_header(); ?>
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
                     </a>
-                    <h4 class="time">投稿：<?php the_time('Y.m.d') ?></h4>
+                    <h4 class="time"><i class="las la-clock"></i> 投稿：<?php the_time('Y.m.d') ?></h4>
                     <!-- <p class="category"><span><?php the_category(' '); ?></span></p> -->
-                    <p><?php echo mb_substr(get_the_excerpt(), 0, 50) . '...'; ?>
+                    <p style="margin-bottom:0;"><?php echo mb_substr(get_the_excerpt(), 0, 50) . '...'; ?>
                         <a href="<?php the_permalink(); ?>">もっと読む</a>
                     </p>
                 </div>
@@ -135,7 +140,9 @@ get_header(); ?>
         <?php endif;
         wp_reset_postdata(); ?>         
             
-        <a class="btn btn-read-more" href="<?php bloginfo('url') ?>/news">記事一覧</a>
+        <div class="more-articles">
+        <a href="<?php bloginfo('url') ?>/news">記事一覧</a>
+        </div>
     </div>
     </div>
 

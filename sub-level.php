@@ -6,6 +6,13 @@
 
 get_header(); ?>
 
+<div class="container px-0">
+<div class="bg-sub-banner" style="width:100%; background: #BFC9CA; background:<?php echo get_field('sub_banner_image'); ?>; background:linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.7) 100%), url(<?php echo get_field('sub_banner_image'); ?>);  background-position:center; background-size:cover; display:flex; align-items:center; justify-content: center;">
+            <h2><?php echo get_the_title(); ?></h2>
+</div>
+</div>
+
+<?php get_template_part('template-parts/register-login'); ?>
 
 
 <div class="main-contents-area">
@@ -136,23 +143,7 @@ if ($post_objects) : ?>
 
 </div>
 
-<!-- <?php
-      $args = array(
-        'numberposts' => -1,
-        'post_type'   => 'kmx_stylist',
-        'order'       => 'ASC',
-        'orderby'     => 'title'
-      );
-      $courses = get_posts($args);
 
-      if ($courses) : ?>
-  <ul>
-    <?php foreach ($courses as $course) : setup_postdata($course); ?>
-      <li><a href=""><?php echo get_the_field('lastName'); ?></a></li>
-    <?php endforeach;
-        wp_reset_postdata(); ?>
-  </ul>
-<?php endif; ?> -->
 
 
 <?php get_footer(); ?>
