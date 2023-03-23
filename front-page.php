@@ -129,7 +129,7 @@ get_header(); ?>
                         <?php the_title(); ?>
                     </a>
                     <h4 class="time"><i class="las la-clock"></i> 投稿：<?php the_time('Y.m.d') ?></h4>
-                    <!-- <p class="category"><span><?php the_category(' '); ?></span></p> -->
+                    <p class="category"><span><?php the_category(' '); ?></span></p>
                     <p style="margin-bottom:0;"><?php echo mb_substr(get_the_excerpt(), 0, 50) . '...'; ?>
                         <a href="<?php the_permalink(); ?>">もっと読む</a>
                     </p>

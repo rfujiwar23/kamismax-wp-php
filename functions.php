@@ -1,5 +1,15 @@
 <?php 
 
+
+function wpb_total_posts() {
+ 
+
+  $total = wp_count_posts()->publish;
+  
+  echo '投稿数: ' . $total;
+  
+  }
+
 // Theme Files
 function theme_files()
 {
