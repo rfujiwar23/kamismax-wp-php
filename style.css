@@ -109,6 +109,15 @@ body {
   aspect-ratio: 16/9; 
 }
 
+.bg-sub-banner .contents h3 {
+  color:#fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.bg-sub-banner .contents p {
+  color:#fff;
+}
+
 .bg-video-wrap {
   position: relative;
   overflow: hidden;
@@ -1377,6 +1386,13 @@ video {
 
 .read-more .news p {
   font-size:0.8em;
+}
+
+.read-more .news p.category span a {
+  text-decoration: none;
+  color:#B9DBE0;
+  background:#0d031d;
+  padding:3px 6px;
 }
 
 .read-more .news p a {

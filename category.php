@@ -1,4 +1,6 @@
-<?php get_header(); 
+<div class="wrapper">
+<?php get_header();
+
 /**
  * Template Name: Posts
  */
@@ -6,16 +8,13 @@
 ?>
 
 <div class="container px-0">
-<div class="bg-sub-banner" style="width:100%; background: linear-gradient(180deg, rgba(21,43,68,1) 0%, rgba(181,243,246,0.6) 100%); display:flex; align-items:center; justify-content: center;">
-            
+<div class="bg-sub-banner" style="width:100%; aspect-ratio:16/7; background: linear-gradient(180deg, rgba(21,43,68,1) 0%, rgba(181,243,246,0.6) 100%); display:flex; align-items:center; justify-content: center;">
             <div class="contents">
-        <h3 class="text-center">KAMISMAXからのお知らせ</h3>
-        <p class="text-center"><?php wpb_total_posts(); ?>件</p>
+        <h3 class="text-center">カテゴリ: <q><?php echo single_cat_title(); ?></q></h3>
+        
     </div>
 </div>
 </div>
-
-
 
 <?php query_posts('posts_per_page=-1'); ?>
 <?php if (have_posts()) : ?>
@@ -36,5 +35,5 @@
         </div>
     </div>
 <?php endif; ?>
-
 <?php get_footer(); ?>
+</div>
