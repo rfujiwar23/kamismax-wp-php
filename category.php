@@ -31,6 +31,7 @@
                         <a href="<?php the_permalink(); ?>">もっと読む</a>
                     </p>
                 </div>
+                
             <?php endwhile; ?>
         </div>
     </div>

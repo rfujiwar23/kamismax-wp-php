@@ -7,10 +7,14 @@
                         <ul style="list-style-type:none;">
                             <?php while (have_rows('menu_type')) : the_row();
                             ?>
-                                <li style="display:inline-block;">
-                                    <div class="seminarInfo">
-                                        <h3><?php the_sub_field('menu-name'); ?></h3>
+                                <li>
+                                    <div class="seminarInfo row">
+                                        <div class="col-sm-3 d-flex align-items-center justify-content-center" style="background:<?php the_sub_field('background_color'); ?>">
+                                        <h3 class="my-0"><?php the_sub_field('menu-name'); ?></h3>
+                                        </div>
+                                        <div class="col-sm-9 d-flex align-items-center justify-content-center" style="border:1px solid <?php the_sub_field('background_color'); ?>; ">
                                         <p><?php the_sub_field('seminar'); ?></p>
+                                        </div>
                                     </div>
                                 </li>
                             <?php endwhile; ?>

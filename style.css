@@ -557,7 +557,7 @@ video {
   height: 100%;
   width: 92%;
   margin: 0 auto;
-  background: rgb(60, 110, 113);
+  background: rgb(72, 170, 176);
   /* box-shadow: 1x 2px 5px rgba(50,50,50,0.6); */
   color: #fff;
   box-shadow: 1px 3px 6px rgb(50 50 50 / 60%);
@@ -699,32 +699,31 @@ video {
 }
 
 .seminarType ul {
-  display: flex;
-  flex-wrap: wrap;
   padding: 0;
 }
 
-.seminarType ul li {
+/* .seminarType ul li {
   flex: 1 0 21%;
-}
+} */
 
 .seminarType ul li .seminarInfo {
   width: 96%;
   margin: 0 auto 20px;
   text-align: center;
-  border: 1px solid #22074a;
+  /* border: 1px solid #22074a; */
 }
 
 .seminarType ul li .seminarInfo h3 {
   font-size: 0.8em;
-  background: #22074a;
-  padding: 5px;
+  /* background: #22074a; */
+  padding: 20px 5px;
   color: #fff;
 }
 
 .seminarType ul li .seminarInfo p {
   color: #000;
-  padding: 0;
+  padding: 20px 5px;
+  margin:0;
 }
 
 .seminar-information-area {
@@ -1419,6 +1418,62 @@ video {
   box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
+.service_information_area {
+  padding: 5vh 0;
+}
+
+.service_information_area .input-row {
+  display: flex;
+  justify-content: space-between;
+  margin:6vh auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+.service_information_area .input-row .small_area_input {
+  border:1px solid rgb(220, 94, 5);
+  padding-left: 0;
+  padding-right: 0;
+  width:48%;
+}
+
+.service_information_area .input-row .small_area_input h4 {
+  border-bottom:1px solid rgb(220, 94, 5);
+  color:rgb(220, 94, 5);
+  font-size: 1em;
+  padding:8px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+}
+
+.service_information_area .input-row .small_area_input p {
+  font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  padding:10px 20px;
+  line-height: 2em;
+}
+
+.extra_info_block {
+  width:80%;
+  margin:4vh auto;
+  /* background:rgb(164, 164, 164); */
+}
+
+.extra_info_block h4 {
+  text-align: center;
+  font-size: 1.25em;
+  padding-bottom: 5px;
+  border-bottom:1px dashed rgb(220, 94, 5);
+}
+
+.extra_info_block p {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+
+
+
 @media screen and (max-width:992px) {
   .stylist-page {
     background:#5d5d5d;
@@ -1492,6 +1547,21 @@ video {
 
   .video-title h2 {
     width: 100%; 
+  }
+
+  
+  .service_information_area .input-row {
+    display: flex;
+    justify-content: normal;
+    flex-direction: column;
+    
+  }
+
+  .service_information_area .input-row .small_area_input {
+    
+    width:100%;
+    margin:30px auto;
+    max-width:360px;
   }
   
 }

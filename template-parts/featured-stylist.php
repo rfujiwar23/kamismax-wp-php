@@ -9,7 +9,7 @@ $release_query = new WP_Query($args);
 <section class="news col-lg-10 offset-lg-1 col-md-10 offset-md-1">
     <?php if ($release_query->have_posts()) : ?>
         <div>
-            <h2 class="text-center">今月の注目の美容師たち！</h2>
+            <h2 class="text-center">今月のカミカリスマたち</h2>
             <!-- <div class="stylist-of-the-month row"> -->
             <div id="carousel2" class="owl-carousel owl-theme">
                 <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>

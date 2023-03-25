@@ -22,7 +22,7 @@
     <div class="container">
         <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 read-more">
             <?php while (have_posts()) : the_post(); ?>
-            <div class="news">
+                <div class="news">
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
                     </a>
@@ -31,7 +31,9 @@
                     <p style="margin-bottom:0;"><?php echo mb_substr(get_the_excerpt(), 0, 50) . '...'; ?>
                         <a href="<?php the_permalink(); ?>">もっと読む</a>
                     </p>
+                    <!-- <p class="margin">tree</p> -->
                 </div>
+                
             <?php endwhile; ?>
         </div>
     </div>
