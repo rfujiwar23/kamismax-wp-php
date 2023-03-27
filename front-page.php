@@ -210,7 +210,6 @@ get_header(); ?>
                 <?php endif; ?>
 
                 <?php if (get_row_layout() == 'extra_info_block') :?>
-
                     <?php if (have_rows('extra_information_text')) : ?>
                         
                             <?php while (have_rows('extra_information_text')) : the_row(); ?>
@@ -218,7 +217,6 @@ get_header(); ?>
                                     <h4>【<?php the_sub_field('extra_info_header'); ?>】</h4>
                                     <p><?php the_sub_field('extra_info_text'); ?></p>
                                 </div>
-                                
                             <?php endwhile; ?>
                         
                     <?php endif; ?>

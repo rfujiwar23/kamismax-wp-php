@@ -1471,6 +1471,28 @@ video {
   font-size: 0.9em;
 }
 
+.type-right, .type-left {
+  background: rgb(21,43,68);
+  text-align: center;
+  color:#fff;
+  margin:30px auto;
+  position: relative;
+}
+
+.type-right h4, .type-left h4 {
+  text-decoration: underline;
+  padding-bottom:20px;
+}
+
+.type-right p, .type-left p {
+  font-size: 0.9em;
+}
+
+.type-right .number h2, .type-left .number h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 120px;
+  color:#ff8002;
+}
 
 
 

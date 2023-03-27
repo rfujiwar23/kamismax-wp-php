@@ -9,7 +9,7 @@ $release_query = new WP_Query($args);
 
 
 
-<section class="rolling-ticker col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+<section class="rolling-ticker col-lg-10 offset-lg-1 col-md-10 offset-md-1" style="font-family: 'Caveat', cursive;">
     <h2><span>Latest News</span></h2>
     <?php if ($release_query->have_posts()) : ?>
             <div class="ticker" id="ticker-roll">

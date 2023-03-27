@@ -14,12 +14,58 @@
                     </div>
                 </div>
                 <div class="arrow-down">
-                <h5 class="text-center"><i class="las la-caret-down"></i></h5>
+                    <h5 class="text-center"><i class="las la-caret-down"></i></h5>
                 </div>
             <?php endwhile; ?>
-                <div class="arrow-down">
+            <div class="arrow-down">
                 <h5 class="text-center">一流のスタイリストへ</h5>
-                </div>
+            </div>
+
+        </div>
+
+    <?php endif; ?>
+</div>
+<div class="container-fluid">
+    <?php if (have_rows('types_of_courses')) : ?>
+
+        <div class="types_of_courses">
+            <?php
+            $i = 1;
+            while (have_rows('types_of_courses')) : the_row();
+                $image = get_sub_field('levelType');
+            ?>
+
+                <?php if (get_row_index() % 2 == 0) : ?>
+                    <div class="type-right row col-lg-8 offset-lg-2 col-md-10 offset-md-1 p-3">
+                        <div class="col-lg-2 d-flex justify-content-center align-items-center number">
+                        <h2><?php echo $i; ?></h2>
+                        </div>
+                        <div class="description col-lg-10">
+                       
+                        <h4 class="mb-0"><?php the_sub_field('course_type_header'); ?></h4>
+                        <p class="mb-0"><?php the_sub_field('course_type_about'); ?></p>
+                        </div>
+                        
+                    </div>
+                <?php else : ?>
+                    <div class="type-left row col-lg-8 offset-lg-2 col-md-10 offset-md-1 p-3">
+                        
+                        
+                        <div class="description col-lg-10">
+                        
+                        <h4 class="mb-0"><?php the_sub_field('course_type_header'); ?></h4>
+                        <p class="mb-0"><?php the_sub_field('course_type_about'); ?></p>
+                        </div>
+                        <div class="col-lg-2 d-flex justify-content-center align-items-center number">
+                        <h2><?php echo $i; ?></h2>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+
+            <?php $i++;
+            endwhile; ?>
+
 
         </div>
 
