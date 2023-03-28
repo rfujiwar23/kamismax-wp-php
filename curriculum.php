@@ -11,7 +11,7 @@ get_header(); ?>
 <?php get_template_part('template-parts/featured-curriculum'); ?>
 </div>
 
-<div class="filters">
+<!-- <div class="filters">
 
   <div class="ui-group">
     <h3>レベル</h3>
@@ -63,7 +63,7 @@ get_header(); ?>
   <div class="salon-info-block Straight basic">Cocoon</div>
   <div class="salon-info-block Straight standard">APISH</div>
   <div class="salon-info-block Straight high">cache cache</div>
-</div>
+</div> -->
 
 
 <?

@@ -17,7 +17,8 @@ $release_query = new WP_Query($args);
                         <div class="title-area column">
                             <div class="type inner-column-left">
                                 <!-- ゼミのID -->
-                                ゼミID: <?php the_field('seminar_id'); ?>
+                                <!-- ゼミID: <?php the_field('seminar_id'); ?> -->
+                                <?php echo $term -> name . get_field('seminar_id', $post->ID); ?>
                             </div>
                             <div class="title inner-column-left">
                                 <!-- ゼミのタイトル 15文字以内で設定 -->
@@ -48,7 +49,7 @@ $release_query = new WP_Query($args);
                                             $group = get_field('seminar_teacher2');
                                             if ($group) {
                                                 //グループ内のフィールドを出力
-                                                echo $group['seminar_teacher_name_field'];
+                                                echo $group['seminar_teacher_name_field2'];
                                             }
                                             ?>
                                         </li>
@@ -173,159 +174,12 @@ $release_query = new WP_Query($args);
 
                                         <?php if (get_field('seminar_teacher2')) : ?>
                                             <div class="stylist col-3">
-                                                <img src="{instructor.image}" alt="instructor.name" class="img-fluid">
-                                                <h5><span>
-
-                                                        <?php
-                                                        //グループのデータを取得
-                                                        $group = get_field('seminar_teacher2');
-                                                        if ($group) {
-                                                            //グループ内のフィールドを出力
-                                                            echo $group['seminar_teacher_name_field'];
-                                                        }
-                                                        ?>
-                                                    </span>氏<br>
-
-
-                                                    <?php
-                                                    //グループのデータを取得
-                                                    $group = get_field('seminar_teacher2');
-                                                    if ($group) {
-                                                        //グループ内のフィールドを出力
-                                                        echo $group['seminar_teacher2_id'];
-                                                    }
-                                                    ?>
-
-                                                    <a href="
-                                                <?php
-                                                $group = get_field('seminar_teacher2');
-                                                $youtubeLink = $group['seminar_sample_video'];
-
-
-                                                if (str_contains($youtubeLink, 'https://youtu.be/')) {
-                                                    $numletters = trim($youtubeLink, 'https://youtu.be/');
-                                                    $newYouTube = 'https://www.youtube.com/embed/' . $numletters;
-                                                    echo $newYouTube;
-                                                } elseif (str_contains($youtubeLink, 'https://www.youtube.com/watch?v=')) {
-                                                    $numletters = trim($youtubeLink, 'https://www.youtube.com/watch?v=');
-                                                    $newYouTube = 'https://www.youtube.com/embed/' . $numletters;
-                                                    echo $newYouTube;
-                                                } else {
-                                                    echo $youtubeLink;
-                                                }
-                                                ?>
-                                                ">
-                                                        動画
-                                                    </a>
-
-
-                                                </h5>
+                                                test
+                                                
                                             </div>
                                         <?php endif; ?>
 
-                                        <?php if (get_field('seminar_teacher3')) : ?>
-                                            <div class="stylist col-3">
-                                                <img src="{instructor.image}" alt="instructor.name" class="img-fluid">
-                                                <h5><span>
-
-                                                        <?php
-                                                        //グループのデータを取得
-                                                        $group = get_field('seminar_teacher3');
-                                                        if ($group) {
-                                                            //グループ内のフィールドを出力
-                                                            echo $group['seminar_teacher_name_field'];
-                                                        }
-                                                        ?>
-                                                    </span>氏<br>
-
-
-                                                    <?php
-                                                    //グループのデータを取得
-                                                    $group = get_field('seminar_teacher3');
-                                                    if ($group) {
-                                                        //グループ内のフィールドを出力
-                                                        echo $group['seminar_teacher3_id'];
-                                                    }
-                                                    ?>
-
-                                                    <a href="
-                                                <?php
-                                                $group = get_field('seminar_teacher3');
-                                                $youtubeLink = $group['seminar_sample_video'];
-
-
-                                                if (str_contains($youtubeLink, 'https://youtu.be/')) {
-                                                    $numletters = trim($youtubeLink, 'https://youtu.be/');
-                                                    $newYouTube = 'https://www.youtube.com/embed/' . $numletters;
-                                                    echo $newYouTube;
-                                                } elseif (str_contains($youtubeLink, 'https://www.youtube.com/watch?v=')) {
-                                                    $numletters = trim($youtubeLink, 'https://www.youtube.com/watch?v=');
-                                                    $newYouTube = 'https://www.youtube.com/embed/' . $numletters;
-                                                    echo $newYouTube;
-                                                } else {
-                                                    echo $youtubeLink;
-                                                }
-                                                ?>
-                                                ">
-                                                        動画
-                                                    </a>
-
-
-                                                </h5>
-                                            </div>
-                                        <?php endif; ?>
-
-                                        <?php if (get_field('seminar_teacher4')) : ?>
-                                            <div class="stylist col-3">
-                                                <img src="{instructor.image}" alt="instructor.name" class="img-fluid">
-                                                <h5><span>
-
-                                                        <?php
-                                                        //グループのデータを取得
-                                                        $group = get_field('seminar_teacher4');
-                                                        if ($group) {
-                                                            //グループ内のフィールドを出力
-                                                            echo $group['seminar_teacher_name_field'];
-                                                        }
-                                                        ?>
-                                                    </span>氏<br>
-
-
-                                                    <?php
-                                                    //グループのデータを取得
-                                                    $group = get_field('seminar_teacher4');
-                                                    if ($group) {
-                                                        //グループ内のフィールドを出力
-                                                        echo $group['seminar_teacher1_id'];
-                                                    }
-                                                    ?>
-
-                                                    <a href="
-                                                <?php
-                                                $group = get_field('seminar_teacher4');
-                                                $youtubeLink = $group['seminar_sample_video'];
-
-
-                                                if (str_contains($youtubeLink, 'https://youtu.be/')) {
-                                                    $numletters = trim($youtubeLink, 'https://youtu.be/');
-                                                    $newYouTube = 'https://www.youtube.com/embed/' . $numletters;
-                                                    echo $newYouTube;
-                                                } elseif (str_contains($youtubeLink, 'https://www.youtube.com/watch?v=')) {
-                                                    $numletters = trim($youtubeLink, 'https://www.youtube.com/watch?v=');
-                                                    $newYouTube = 'https://www.youtube.com/embed/' . $numletters;
-                                                    echo $newYouTube;
-                                                } else {
-                                                    echo $youtubeLink;
-                                                }
-                                                ?>
-                                                ">
-                                                        動画
-                                                    </a>
-
-
-                                                </h5>
-                                            </div>
-                                        <?php endif; ?>
+                                        
                                     </div>
                                 </div>
                             </div>

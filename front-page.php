@@ -220,7 +220,12 @@ get_header(); ?>
                             <?php endwhile; ?>
                         
                     <?php endif; ?>
-                <?php endif; ?>    
+                <?php endif; ?>
+                <div class="service_information_image col-md-10 offset-md-1">
+                <?php if (get_row_layout() == 'image') :?>
+                    <img src="<?php the_sub_field('service_information_image'); ?>" alt="KAMISMAX" class="img-fluid">
+                <?php endif; ?>
+                </div>
             </div>
         <?php endwhile; ?>
 
