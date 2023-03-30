@@ -37,10 +37,8 @@
 
                 <?php if (get_row_index() % 2 == 0) : ?>
                     <div class="type-right row col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                        <div class="col-lg-2 d-flex justify-content-center align-items-center number">
-                        <h2><?php echo $i; ?></h2>
-                        </div>
-                        <div class="description col-lg-10 p-3" style="background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url(<?php the_sub_field('background_image'); ?>) no-repeat; background-position:center; background-size:cover; ">
+                       
+                        <div class="description col-lg-10 offset-lg-1 p-3" style="background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url(<?php the_sub_field('background_image'); ?>) no-repeat; background-position:center; background-size:cover; ">
                        
                         <h4 class="mb-0" style="color: <?php the_sub_field('course_type_header_color'); ?>"><?php the_sub_field('course_type_header'); ?></h4>
                         <div class="desc-text" style="color: <?php the_sub_field('course_type_about_text_color') ?>">
@@ -53,7 +51,7 @@
                     <div class="type-left row col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                         
                         
-                        <div class="description col-lg-10 p-3" 
+                        <div class="description col-lg-10 offset-lg-1 p-3" 
                         style="background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url(<?php the_sub_field('background_image'); ?>) no-repeat; 
                         background-position:center; background-size:cover;
                         background:<?php the_sub_field('background_color'); ?>; ">
@@ -63,9 +61,7 @@
                         <?php the_sub_field('course_type_about'); ?>
                         </div>
                         </div>
-                        <div class="col-lg-2 d-flex justify-content-center align-items-center number">
-                        <h2><?php echo $i; ?></h2>
-                        </div>
+                        
                     </div>
                 <?php endif; ?>
 
@@ -78,4 +74,4 @@
 
     <?php endif; ?>
 </div>
-<?php echo get_sub_field('free_text_area') ?>
+<!-- <?php echo get_sub_field('free_text_area') ?> -->

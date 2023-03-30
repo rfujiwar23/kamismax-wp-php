@@ -1,9 +1,4 @@
 <?php 
-
-  /**
- * Template Name: テストページ
- */
-
   global $title;
   $page = get_post(get_page_by_path('course'));
   $title = $page -> post_title;
@@ -18,10 +13,7 @@
   echo $page -> post_content;
   ?>
 
-  
-
 <div class="container-fluid pb-5" id="list">
-  
   <div class="clist py-4">
     <div class="course-table">
       <ul class="nav">
@@ -181,7 +173,7 @@
 <?php
   get_footer();
 ?>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   <script>
     $(document).ready(function() {
       "use strict"

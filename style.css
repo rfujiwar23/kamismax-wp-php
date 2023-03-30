@@ -523,6 +523,8 @@ video {
 
 .full-video-list h2 {
   text-align: center;
+  text-decoration:underline;
+  color:#fff;
 }
 
 .full-video-list ul.video {
@@ -717,7 +719,7 @@ video {
   font-size: 0.8em;
   /* background: #22074a; */
   padding: 20px 5px;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .seminarType ul li .seminarInfo p {
@@ -803,9 +805,9 @@ video {
   font-size: 2em;
 }
 
-.free-text {
+/* .free-text {
   padding:4vh 20px;
-}
+} */
 
 .text-area {
   margin:5vh auto;
@@ -933,24 +935,33 @@ video {
 
 
 /* ゼミ */
+.seminar-list {
+  width:100%;
+  max-width:960px;
+  margin:4vh auto;
+}
+
 .seminar {
   margin: 2vh auto;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
+  border:2px solid #fff;
 }
 .seminar .seminar-top {
   display: flex;
   flex-direction: row;
+  border-bottom:2px solid #fff;
 }
 .seminar .seminar-top .column {
   display: flex;
   display: column;
   width: 100%;
+  /* background:#fff; */
 }
 .seminar .seminar-top .column .inner-column-left {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 5px;
+  border-right: 2px solid #fff;
 }
 .seminar .seminar-top .column .inner-column-left:nth-last-child(1) {
   margin-right: 0;
@@ -963,7 +974,7 @@ video {
 }
 .seminar .seminar-top .title-area .type {
   flex: 1;
-  background: #000;
+  /* background: #000; */
   color: #fff;
   padding: 10px 20px;
 }
@@ -994,12 +1005,25 @@ video {
   border-radius: 5px;
   font-size: 0.9em;
 }
+
+.seminar .seminar-top .number {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.seminar .seminar-top .number span em {
+  font-style: normal;
+}
 .seminar .seminar-contents {
   margin-top: 1vh;
-  padding: 2vh 0 1vh;
-  background: #fff;
+  padding: 0 0 1vh;
+  /* background: #fff; */
 }
-.seminar .seminar-contents .number {
+/* .seminar .seminar-contents .number {
   text-align: right;
 }
 .seminar .seminar-contents .number span {
@@ -1009,12 +1033,13 @@ video {
 }
 .seminar .seminar-contents .number span em {
   font-style: normal;
-}
+} */
 .seminar .seminar-contents .seminar-details .brief-details {
   padding: 10px 20px;
   margin-bottom: 2vh;
-  border-bottom: 1px solid #9a9a9a;
+  border-bottom: 1px solid #fff;
   font-weight: bold;
+  /* color: #fff; */
 }
 .seminar .seminar-contents .seminar-details .details .detail-top {
   display: flex;
@@ -1036,17 +1061,18 @@ video {
   font-size: 16px;
 }
 .seminar .seminar-contents .seminar-details .details .detail-top .right {
-  padding: 5px;
-  border: 1px solid #000;
+  padding: 5px 10px;
+  /* border: 1px solid #fff; */
 }
 .seminar .seminar-contents .seminar-details .details .detail-top .right p {
   margin-bottom: 0;
   font-size: 16px;
+  /* color:#fff; */
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px dashed #9a9a9a;
+  /* margin-top: 10px; */
+  padding: 5px 0;
+  border-bottom: 1px dashed #fff;
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points ul {
   margin-top: 10px;
@@ -1055,12 +1081,13 @@ video {
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points ul li {
   font-size: 0.9em;
+  /* color: #fff; */
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points ul li::before {
   margin-right: 3px;
-  content: "◉";
+  content: "■";
   font-weight: bold;
-  color: #3d2727;
+  /* color: #fff; */
   font-size: 0.7em;
 }
 .seminar .seminar-contents .seminar-details .stylists {
@@ -1088,18 +1115,22 @@ video {
   background: #9a9a9a;
   padding: 5px 10px;
   font-size: 16px;
-  color: #fff;
+  /* color: #fff; */
 }
 .seminar .seminar-contents .seminar-details .message-from-instructor .message {
   flex: 3;
   display: flex;
   align-items: center;
   padding: 5px;
+  font-size: 0.8em;
+  /* color: #fff; */
 }
 
-.color {
-  border: 5px solid #f491ff;
-  background: #f491ff;
+.seminar.cut {
+  background:rgba(212, 26, 26, 0.819);
+}
+.seminar.color {
+  background:rgb(199 177 27 / 91%);
 }
 /* ゼミ */
 
@@ -1475,11 +1506,15 @@ video {
   font-size: 0.9em;
 }
 
+.types_of_courses {
+  margin:8vh auto;
+}
+
 .type-right, .type-left {
   /* background: rgb(21,43,68); */
   text-align: center;
   color:#fff;
-  margin:30px auto;
+  margin:3vh auto;
   position: relative;
 }
 
@@ -1607,7 +1642,7 @@ video {
   }
 
   .seminar .seminar-contents .seminar-details .message-from-instructor {
-    padding: 10px;
+    /* padding: 10px; */
     display: flex;
     flex-direction: column;
   }
