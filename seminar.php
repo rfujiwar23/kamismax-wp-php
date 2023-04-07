@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Template Name: セミナー
+ */
 
 get_header(); ?>
 

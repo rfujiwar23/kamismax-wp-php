@@ -9,14 +9,14 @@ $release_query = new WP_Query($args);
 <section class="news col-lg-10 offset-lg-1 col-md-10 offset-md-1">
     <?php if ($release_query->have_posts()) : ?>
         <div>
-            <h2 class="text-center">今月のカミカリスマたち</h2>
+            <h2 class="text-center">今月の注目の美容師たち！</h2>
             <!-- <div class="stylist-of-the-month row"> -->
             <div id="carousel2" class="owl-carousel owl-theme">
                 <?php while ($release_query->have_posts()) : $release_query->the_post(); ?>
                     <?php
                     $featured_stylists = get_field('stylist');
                     if ($featured_stylists) : ?>
-                        <?php foreach ($featured_stylists as $featured_stylist) :
+                        <?php foreach ((array)$featured_stylists as $featured_stylist) :
                             $permalink = get_permalink($featured_stylist->ID);
                             $title = get_the_title($featured_stylist->ID);
                             $lastName = get_field('lastName', $featured_stylist->ID);
@@ -29,7 +29,7 @@ $release_query = new WP_Query($args);
                                     <div class="row row-flex mx-0">
                                         <div class="col-lg-4 col-md-4 col-4 px-0 image">
                                             <img src="<?php echo esc_html($stylist_photo); ?>" alt="<?php echo esc_html($lastName); ?>" class="img-fluid">
-
+                                            <pre><?php echo esc_html($stylist_photo); ?></pre>
                                         </div>
                                         <div class="col-lg-8 col-md-8 col-8 px-0 d-flex justify-contents-center align-items-center info">
                                             <div class="contents">

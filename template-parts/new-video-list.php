@@ -2,8 +2,8 @@
         <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-10 offset-1">
         <h1><img src="<?php echo get_template_directory_uri(); ?>/img/kmax-logo@2x.png" alt="KAMISMAX" class="img-fluid"></h1>
         </div>
-        <h2>新着動画</h2>
-        <h4>最新8件</h4>
+        <!-- <h2>新着動画</h2> -->
+        <!-- <h4>最新8件</h4> -->
         <?php
         $args = array(
             'post_type' => 'video_list',

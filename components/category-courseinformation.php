@@ -32,13 +32,13 @@
             <?php
             $i = 1;
             while (have_rows('types_of_courses')) : the_row();
-                $image = get_sub_field('levelType');
+                
             ?>
 
                 <?php if (get_row_index() % 2 == 0) : ?>
-                    <div class="type-right row col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="type-right row">
                        
-                        <div class="description col-lg-10 offset-lg-1 p-3" style="background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url(<?php the_sub_field('background_image'); ?>) no-repeat; background-position:center; background-size:cover; ">
+                        <div class="description" style="background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url(<?php the_sub_field('background_image'); ?>) no-repeat; background-position:center; background-size:cover; padding:4vh 10px; ">
                        
                         <h4 class="mb-0" style="color: <?php the_sub_field('course_type_header_color'); ?>"><?php the_sub_field('course_type_header'); ?></h4>
                         <div class="desc-text" style="color: <?php the_sub_field('course_type_about_text_color') ?>">
@@ -48,13 +48,13 @@
                         
                     </div>
                 <?php else : ?>
-                    <div class="type-left row col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="type-left row">
                         
                         
-                        <div class="description col-lg-10 offset-lg-1 p-3" 
+                        <div class="description" 
                         style="background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url(<?php the_sub_field('background_image'); ?>) no-repeat; 
                         background-position:center; background-size:cover;
-                        background:<?php the_sub_field('background_color'); ?>; ">
+                        background:<?php the_sub_field('background_color'); ?>; padding:4vh 10px; ">
                         
                         <h4 class="mb-0" style="color: <?php the_sub_field('course_type_header_color'); ?>"><?php the_sub_field('course_type_header'); ?></h4>
                         <div class="desc-text" style="color: <?php the_sub_field('course_type_about_text_color') ?>">

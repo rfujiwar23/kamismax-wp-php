@@ -1,6 +1,7 @@
-<div class="container">
+
     <?php if (have_rows('seminarInformation')) : ?>
         <?php while (have_rows('seminarInformation')) : the_row(); ?>
+            <div class="container">
             <?php if (get_row_layout() == 'types_of_seminar') : ?>
                 <div class="seminarType">
                     <?php if (have_rows('menu_type')) : ?>
@@ -22,11 +23,14 @@
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
+            </div>
+            <div class="container-fluid px-0">
             <?php if (get_row_layout() == 'seminar_contents') : ?>
                 <div class="seminar-information-area">
                 <p><?php echo get_sub_field('free_text_area_seminar') ?></p>
                 </div>
             <?php endif; ?>
+            </div>
         <?php endwhile; ?>
     <?php endif; ?>
-</div>
+                

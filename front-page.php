@@ -70,13 +70,13 @@ get_header(); ?>
                 <?php get_template_part('components/category', 'viewEnvinformation'); ?>
             <?php endif; ?>
 
-            <?php if (get_row_layout() == 'kamismax_features') : ?>
+            <!-- <?php if (get_row_layout() == 'kamismax_features') : ?>
 
-                <div class="kamismax_features container-fluid">
+                
 
                     <h2><?php the_sub_field('section_title') ?></h2>
                     <?php if (have_rows('features_contents')) : $i = 0; ?>
-                        <div class="main-points">
+                        
                             <?php while (have_rows('features_contents')) : the_row();
                                 $i++;
 
@@ -96,15 +96,15 @@ get_header(); ?>
                         </div>
                     <?php endif; ?>
                 </div>
+            <?php endif; ?> -->
+
+            <?php if (get_row_layout() == 'recommended_videos') : ?>
+                    <?php get_template_part('components/category', 'recVid'); ?>
             <?php endif; ?>
 
         <?php endwhile; ?>
 
     <?php endif; ?>
-
-
-
-
 
 
     <div class="container">
@@ -159,76 +159,12 @@ get_header(); ?>
 
 </div>
 
-<div class="service-information-area">
-    <?php if (have_rows('service_information_area')) : ?>
-
-        <?php while (have_rows('service_information_area')) : the_row(); ?>
-            <div class="container">
-                <?php if (get_row_layout() == 'txt-block') : ?>
-                    <pre><?php get_field('text_area') ?></pre>
-                <?php endif; ?>
-
-            </div>
-        <?php endwhile; ?>
-    <?php endif; ?>
-</div>
-
-
-
-<?php get_template_part('template-parts/full-video-list'); ?>
 
 
 
 <div class="service_information_area">
     <?php if (have_rows('service_information_area')) : ?>
-
-        <?php while (have_rows('service_information_area')) : the_row(); ?>
-            <div class="container">
-                <?php if (get_row_layout() == 'txt-block') : ?>
-                    <div class="div col-lg-10 offset-lg-1 col-md-12">
-                    <p><?php the_sub_field('text_area') ?></p>
-                    </div>
-                <?php endif; ?>
-                <?php if (get_row_layout() == 'small_area') : ?>
-
-                    <?php if (have_rows('small_area_input')) : ?>
-                        <div class="input-row">
-                            <?php while (have_rows('small_area_input')) : the_row(); ?>
-                                <div class="small_area_input">
-                                    <h4><?php the_sub_field('small_area_header'); ?></h4>
-                                    <!-- <p><?php the_sub_field('small_area_list'); ?></p> -->
-                                    <p>
-                                        <?php
-                                        echo str_replace(array("\r\n"), '<li></li>', the_sub_field('small_area_list'));
-                                        ?>
-                                    </p>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endif; ?>
-
-                <?php endif; ?>
-
-                <?php if (get_row_layout() == 'extra_info_block') :?>
-                    <?php if (have_rows('extra_information_text')) : ?>
-                        
-                            <?php while (have_rows('extra_information_text')) : the_row(); ?>
-                                <div class="extra_info_block">
-                                    <h4>【<?php the_sub_field('extra_info_header'); ?>】</h4>
-                                    <p><?php the_sub_field('extra_info_text'); ?></p>
-                                </div>
-                            <?php endwhile; ?>
-                        
-                    <?php endif; ?>
-                <?php endif; ?>
-                <div class="service_information_image col-md-10 offset-md-1">
-                <?php if (get_row_layout() == 'image') :?>
-                    <img src="<?php the_sub_field('service_information_image'); ?>" alt="KAMISMAX" class="img-fluid">
-                <?php endif; ?>
-                </div>
-            </div>
-        <?php endwhile; ?>
-
+        <?php get_template_part('components/top', 'service'); ?>
     <?php endif; ?>
 </div>
 
