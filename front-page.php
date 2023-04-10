@@ -69,38 +69,49 @@ get_header(); ?>
             <?php if (get_row_layout() == 'view_environment_block') : ?>
                 <?php get_template_part('components/category', 'viewEnvinformation'); ?>
             <?php endif; ?>
+	
+				<?php if (get_row_layout() == 'recommended_videos') : ?>
+                    
+					<div class="recommended-videos mt-5">
+					<?php
+					$post_objects = get_sub_field('select_videos');
+					if ($post_objects) : ?>
 
-            <!-- <?php if (get_row_layout() == 'kamismax_features') : ?>
+							<h2 class="text-center">オススメ動画</h2>
 
-                
+							<div class="col-lg-8 offset-lg-2">
 
-                    <h2><?php the_sub_field('section_title') ?></h2>
-                    <?php if (have_rows('features_contents')) : $i = 0; ?>
-                        
-                            <?php while (have_rows('features_contents')) : the_row();
-                                $i++;
+								<div class="video-list">
+									<?php foreach ($post_objects as $post) : ?>
+										<?php setup_postdata($post); ?>
 
-                            ?>
+											<div class="video">
+												<div class="thumbnail">
+													<div class="rec-overlay">
+														<div class="text">
+														<h4 class="mb-0"><?php the_field('video_about'); ?></h4>
+													<p><a href="<?php echo get_permalink(); ?>">
+															動画を視聴する
+														</a></p>
+														</div>
+													</div>
+													<img src="<?php the_field('thumbnail'); ?>" alt="KAMISMA STYLIST" class="img-fluid">
+												</div>
 
-                                <div class="point card">
-                                    <h3 class="text-center"><span>ポイント <?php echo $i; ?></span></h3>
-                                    <h4><?php the_sub_field('feature_header'); ?></h4>
-                                    <div class="card-body">
-                                        <?php the_sub_field('feature_description'); ?>
-                                    </div>
-                                    <div class="card-image p-2">
-                                        <img src="<?php the_sub_field('feature_image'); ?>" alt="KAMISMAX　カミスマックス" class="img-fluid">
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?> -->
+												
+											</div>
 
-            <?php if (get_row_layout() == 'recommended_videos') : ?>
-                    <?php get_template_part('components/category', 'recVid'); ?>
+									<?php endforeach; ?>
+									<?php wp_reset_postdata(); ?>
+								</div>
+
+							</div>
+
+					<?php endif; ?>
+					</div>
+	
             <?php endif; ?>
+            
 
         <?php endwhile; ?>
 

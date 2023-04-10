@@ -1,24 +1,14 @@
 <?php 
 
-
-function wpb_total_posts() {
- 
-
-  $total = wp_count_posts()->publish;
-  
-  echo '投稿数: ' . $total;
-  
-  }
-
 // Theme Files
 function theme_files()
 {
  wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css');
  
-//  wp_enqueue_style('main-style', get_template_directory_uri() . '/style2.css');
- wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
- wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array('jquery'), true, true );
-//  wp_enqueue_script('main-curriculum', get_template_directory_uri() . 'js/curriculum.js', array( 'jquery' ), '1.0.0', true );
+ wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css');
+    
+ wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', array('jquery'), true, true);
+
 }
 
 add_action('wp_enqueue_scripts', 'theme_files');
@@ -117,5 +107,3 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 register_nav_menu('main-menu', 'Main menu');
 
 ?>
-
-

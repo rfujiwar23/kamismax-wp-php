@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: セミナー
+ * Template Name: セミナーページ
  */
 
 get_header(); ?>

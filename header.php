@@ -1,6 +1,5 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
-
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,16 +9,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <?php if (is_singular() && get_option('thread_comments')) wp_enqueue_script('comment-reply'); ?>
   <?php wp_head(); ?>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  <script>
-    jQuery(document).ready(function($) {
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+    <script>
+    jQuery(document).ready(function ($) {
       var owl = $("#carousel");
       owl.owlCarousel({
         autoplay: true,
@@ -61,7 +64,7 @@
           },
           1200: {
             items: 4,
-            loop: true
+            loop:true
           }
         },
         responsiveRefreshRate: 1000,
@@ -85,16 +88,16 @@
         lazyLoad: false
       });
 
-      $(".next").click(function() {
+      $(".next").click(function () {
         owl.trigger("owl.next");
       });
-      $(".prev").click(function() {
+      $(".prev").click(function () {
         owl.trigger("owl.prev");
       });
     });
-  </script>
-  <script>
-    jQuery(document).ready(function($) {
+    </script>
+	<script>
+    jQuery(document).ready(function ($) {
       var owl = $("#carousel2");
       owl.owlCarousel({
         autoplay: true,
@@ -136,7 +139,7 @@
           },
           1200: {
             items: 2,
-            loop: true
+            loop:true
           }
         },
         responsiveRefreshRate: 1000,
@@ -160,16 +163,16 @@
         lazyLoad: false
       });
 
-      $(".next").click(function() {
+      $(".next").click(function () {
         owl.trigger("owl.next");
       });
-      $(".prev").click(function() {
+      $(".prev").click(function () {
         owl.trigger("owl.prev");
       });
     });
-  </script>
-
-
+    </script>
+    
+    
 </head>
 
 <body <?php body_class(); ?>>
@@ -190,7 +193,7 @@
           'container' => false,
           'menu_class' => '',
           'fallback_cb' => '__return_false',
-          'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+          'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
           'depth' => 2,
           'walker' => new bootstrap_5_wp_nav_menu_walker()
         ));
@@ -202,3 +205,4 @@
       </div>
     </div>
   </nav>
+  
