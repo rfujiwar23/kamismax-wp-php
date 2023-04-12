@@ -40,7 +40,7 @@
                        
                         <div class="description" style="background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url(<?php the_sub_field('background_image'); ?>) no-repeat; background-position:center; background-size:cover; padding:4vh 10px; ">
                        
-                        <h4 class="mb-0" style="color: <?php the_sub_field('course_type_header_color'); ?>"><?php the_sub_field('course_type_header'); ?></h4>
+                        <h4 class="mb-0" style="color: <?php the_sub_field('course_type_header_color'); ?>"><em style="padding: 10px; color: <?php the_sub_field('course_type_header_bg'); ?>;"><?php the_sub_field('course_type_header'); ?></em></h4>
                         <div class="desc-text" style="color: <?php the_sub_field('course_type_about_text_color') ?>">
                         <?php the_sub_field('course_type_about'); ?>
                         </div>
@@ -56,7 +56,7 @@
                         background-position:center; background-size:cover;
                         background:<?php the_sub_field('background_color'); ?>; padding:4vh 10px; ">
                         
-                        <h4 class="mb-0" style="color: <?php the_sub_field('course_type_header_color'); ?>"><?php the_sub_field('course_type_header'); ?></h4>
+                        <h4 class="mb-0" style="color: <?php the_sub_field('course_type_header_color'); ?>"><em style="padding: 10px; color: <?php the_sub_field('course_type_header_bg'); ?>;"><?php the_sub_field('course_type_header'); ?></em></h4>
                         <div class="desc-text" style="color: <?php the_sub_field('course_type_about_text_color') ?>">
                         <?php the_sub_field('course_type_about'); ?>
                         </div>

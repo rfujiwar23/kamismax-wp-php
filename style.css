@@ -787,10 +787,10 @@ video {
 }
 
 .sample-video .row-flex .video-info {
-  background: rgb(229, 229, 299);
+  /* background: rgb(229, 229, 299); */
   box-shadow: 1px 3px 6px rgba(20, 20, 20, 0.6);
   padding: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   ;
 }
 

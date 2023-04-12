@@ -13,6 +13,11 @@ function theme_files()
 
 add_action('wp_enqueue_scripts', 'theme_files');
 
+function wpb_total_posts() {
+  $total = wp_count_posts()->publish;
+  echo '投稿数: ' . $total ;
+}
+
 function add_isotope() {
   wp_register_script( 'isotope', get_template_directory_uri().'/js/libs/jquery.isotope.min.js', array('jquery'),  true );
   wp_register_script( 'isotope-init', get_template_directory_uri().'/js/isotope.js', array('jquery', 'isotope'),  true );
